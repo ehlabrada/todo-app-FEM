@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { data } from "./data.js";
+
+// Components
+import Container from "./components/Container";
+
+// Styles
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./components/theme/globalStyles";
+import Theme from "./components/theme/Theme";
+import { useState } from "react";
 
 function App() {
+  const [timeFrameActive, setTimeFrameActive] = useState({
+    timeFrame: "daily",
+  });
+
+  console.log("TIMEFRAME", timeFrameActive);
+
+  const handleChangeTimeFrame = (event) => {
+    const { name, value } = event.target;
+
+    setTimeFrameActive((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <Container
+          data={data}
+          timeFrameActive={timeFrameActive}
+          handleChangeTimeFrame={handleChangeTimeFrame}
+        />
+      </ThemeProvider>
+    </>
   );
 }
 
