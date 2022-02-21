@@ -1,34 +1,82 @@
-const Theme = {
+const bothColors = {
+  brightBlue: "hsl(220, 98%, 61%)",
+  checkBackground: "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
+};
+
+export const LightTheme = {
   colors: {
-    blue: "hsl(246, 80%, 60%)",
-    light_red_work: "hsl(15, 100%, 70%)",
-    soft_blue_play: "hsl(195, 74%, 62%)",
-    light_red_study: "hsl(348, 100%, 68%)",
-    lime_green_exercise: "hsl(145, 58%, 55%)",
-    violet_social: "hsl(264, 64%, 52%)",
-    soft_orange_care: "hsl(43, 84%, 65%)",
-    veryDarkBlue: "hsl(226, 43%, 10%)",
-    darkBlue: "hsl(235, 46%, 20%)",
-    desaturatedBlue: "hsl(235, 45%, 61%)",
-    paleBlue: "hsl(236, 100%, 87%)",
+    brightBlue: "hsl(220, 98%, 61%)",
+    checkBackground: bothColors.checkBackground,
+    veryLightGray: "hsl(0, 0%, 98%)",
+    veryLightGrayishBlue: "hsl(236, 33%, 92%)",
+    lightGrayishBlue: "hsl(233, 11%, 84%)",
+    darkGrayishBlue: "hsl(236, 9%, 61%)",
+    veryDarkGrayishBlue: "hsl(235, 19%, 35%)",
+    red: "hsl(0, 100%, 50%)",
+    white: "hsl(0, 0%, 100%)",
+    bg: "hsl(0, 0%, 98%)",
+    header: {
+      textColor: "hsl(0, 0%, 98%)",
+    },
+    input: {
+      bg: "hsl(0, 0%, 98%)",
+      textColor: "hsl(235, 19%, 35%)",
+    },
+    todoItem: {
+      bg: "hsl(0, 0%, 98%)",
+      textColor: "hsl(235, 19%, 35%)",
+    },
+    option: {
+      textColor: "hsl(236, 9%, 61%)",
+      textHover: "hsl(235, 19%, 35%)",
+    },
+    todoBorder: "rgba(72, 75, 106, 0.2);",
   },
   font: {
     size: "18px",
-    family: "'Rubik', sans-serif",
     weights: {
-      light: 300,
-      medium: 400,
-      bold: 500,
+      normal: "400",
+      bold: "700",
     },
-  },
-  breakPoint: {
-    xSmall: "375px",
-    small: "576px",
-    medium: "768px",
-    large: "992px",
-    extraLarge: "1200px",
-    largest: "1400px",
   },
 };
 
-export default Theme;
+export const DarkTheme = {
+  colors: {
+    brightBlue: bothColors.brightBlue,
+    checkBackground: bothColors.checkBackground,
+    veryDarkBlue: "hsl(235, 21%, 11%)",
+    veryDarkDesaturatedBlue: "hsl(235, 24%, 19%)",
+    lightGrayishBlue: "hsl(234, 39%, 85%)",
+    lightGrayishBlueHover: "hsl(236, 33%, 92%)",
+    darkGrayishBlue: "hsl(234, 11%, 52%)",
+    veryDarkGrayishBlue: "hsl(233, 14%, 35%)",
+    veryDarkGrayishBlue2: "hsl(237, 14%, 26%)",
+    red: "hsl(0, 100%, 50%)",
+    white: "hsl(0, 0%, 100%)",
+    bg: "hsl(235, 21%, 11%)",
+    header: {
+      textColor: "hsl(0, 0%, 98%)",
+    },
+    input: {
+      bg: "hsl(235, 24%, 19%)",
+      textColor: "hsl(234, 39%, 85%)",
+    },
+    todoItem: {
+      bg: "hsl(235, 24%, 19%)",
+      textColor: "hsl(234, 39%, 85%)",
+    },
+    option: {
+      textColor: "hsl(235, 19%, 35%)",
+      textHover: "hsl(234, 39%, 85%)",
+    },
+    todoBorder: "rgba(202, 205, 232, 0.2)",
+  },
+  font: {
+    size: "18px",
+    weights: {
+      normal: "400",
+      bold: "700",
+    },
+  },
+};
